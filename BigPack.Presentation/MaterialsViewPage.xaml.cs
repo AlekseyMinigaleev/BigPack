@@ -24,17 +24,17 @@ namespace BigPack.Presentation
     /// </summary>
     public partial class MaterialsViewPage : Page
     {
-        private readonly BigPackDbContext _dbCOntext;
+        private readonly BigPackDbContext _dbContext;
         public MaterialsViewPage()
         {
-            _dbCOntext = new BigPackDbContext();
+            _dbContext = new BigPackDbContext();
             InitializeComponent();
 
             var mapperConfig = new MapperConfiguration(mc =>
             mc.AddProfile(new MaterialViewModelProfiler()));
             var mapper = mapperConfig.CreateMapper();
 
-            var materials = _dbCOntext.Materials
+            var materials = _dbContext.Materials
                 .ProjectTo<MaterialViewModel>(mapper.ConfigurationProvider)
                 .ToList();
 
