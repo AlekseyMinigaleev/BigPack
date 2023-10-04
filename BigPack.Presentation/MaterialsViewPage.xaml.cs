@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BigPack.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,21 +17,17 @@ using System.Windows.Shapes;
 namespace BigPack.Presentation
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MaterialsViewPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MaterialsViewPage : Page
     {
-        public MainWindow()
+        public MaterialsViewPage()
         {
             InitializeComponent();
+            var dbcontext = new BigPackDbContext();
+            var materials = dbcontext.Materials.ToList();
 
-            MainFrame.Navigate(new MaterialsViewPage());
-            FrameManager.MainFrame = MainFrame;
-        }
-
-        private void MainFrame_ContentRendered(object sender, EventArgs e)
-        {
-
+            MaterialsListView.ItemsSource = materials;
         }
     }
 }

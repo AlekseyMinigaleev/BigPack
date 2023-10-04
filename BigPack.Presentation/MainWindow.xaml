@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BigPack.Presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+           Title="MainWindow" Height="450" Width="800" FontFamily="Verdana" Icon="Большая пачка.png">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Большая пачка.png" HorizontalAlignment="Left"/>
+        <TextBlock Text="Большая пачка" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden">
+
+        </Frame>
+
     </Grid>
 </Window>
