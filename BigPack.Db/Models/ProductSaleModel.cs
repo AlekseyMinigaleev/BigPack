@@ -20,8 +20,8 @@ namespace BigPack.Db
 
         public int ProductCount { get; set; }
 
-        public virtual Agent Agent { get; set; }
+        public virtual AgentModel Agent { get; set; }
 
-        public virtual Product Product { get; set; }
+        public virtual ProductModel Product { get; set; }
     }
 }

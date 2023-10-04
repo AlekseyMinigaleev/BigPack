@@ -6,51 +6,49 @@ namespace BigPack.Db
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Material")]
-    public partial class Material
+    [Table("Product")]
+    public partial class ProductModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Material()
+        public ProductModel()
         {
-            MaterialCountHistory = new HashSet<MaterialCountHistory>();
+            ProductCostHistory = new HashSet<ProductCostHistory>();
             ProductMaterial = new HashSet<ProductMaterial>();
-            Supplier = new HashSet<Supplier>();
+            ProductSale = new HashSet<ProductSale>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [Required]
         [StringLength(100)]
         public string Title { get; set; }
 
-        public int CountInPack { get; set; }
+        public int? ProductTypeID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Unit { get; set; }
-
-        public int CountInStock { get; set; }
-
-        public int MinCount { get; set; }
+        [StringLength(10)]
+        public string ArticleNumber { get; set; }
 
         public string Description { get; set; }
 
-        public decimal Cost { get; set; }
-
+        [StringLength(100)]
         public string Image { get; set; }
 
-        public int MaterialTypeID { get; set; }
+        public int? ProductionPersonCount { get; set; }
+
+        public int? ProductionWorkshopNumber { get; set; }
+
+        public decimal MinCostForAgent { get; set; }
+
+        public virtual ProductType ProductType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialCountHistory> MaterialCountHistory { get; set; }
-
-        public virtual MaterialType MaterialType { get; set; }
+        public virtual ICollection<ProductCostHistory> ProductCostHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Supplier> Supplier { get; set; }
+        public virtual ICollection<ProductSale> ProductSale { get; set; }
     }
 }

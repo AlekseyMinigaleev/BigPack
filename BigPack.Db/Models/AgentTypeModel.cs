@@ -7,12 +7,12 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("AgentType")]
-    public partial class AgentType
+    public partial class AgentTypeModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AgentType()
+        public AgentTypeModel()
         {
-            Agent = new HashSet<Agent>();
+            Agent = new HashSet<AgentModel>();
         }
 
         public int ID { get; set; }
@@ -25,6 +25,6 @@ namespace BigPack.Db
         public string Image { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Agent> Agent { get; set; }
+        public virtual ICollection<AgentModel> Agent { get; set; }
     }
 }

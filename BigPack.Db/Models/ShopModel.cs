@@ -7,7 +7,7 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("Shop")]
-    public partial class Shop
+    public partial class ShopModel
     {
         public int ID { get; set; }
 
@@ -20,6 +20,6 @@ namespace BigPack.Db
 
         public int AgentID { get; set; }
 
-        public virtual Agent Agent { get; set; }
+        public virtual AgentModel Agent { get; set; }
     }
 }

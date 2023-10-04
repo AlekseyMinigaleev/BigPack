@@ -6,25 +6,24 @@ namespace BigPack.Db
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("MaterialType")]
-    public partial class MaterialType
+    [Table("ProductType")]
+    public partial class ProductTypeModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MaterialType()
+        public ProductTypeModel()
         {
-            Material = new HashSet<Material>();
+            Product = new HashSet<ProductModel>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Title { get; set; }
 
-        public double? DefectedPercent { get; set; }
+        public double DefectedPercent { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<ProductModel> Product { get; set; }
     }
 }

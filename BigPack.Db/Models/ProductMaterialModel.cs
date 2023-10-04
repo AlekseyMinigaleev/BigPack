@@ -21,8 +21,8 @@ namespace BigPack.Db
 
         public double? Count { get; set; }
 
-        public virtual Material Material { get; set; }
+        public virtual MaterialModel Material { get; set; }
 
-        public virtual Product Product { get; set; }
+        public virtual ProductModel Product { get; set; }
     }
 }

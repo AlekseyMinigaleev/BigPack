@@ -6,17 +6,17 @@ namespace BigPack.Db
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("AgentPriorityHistory")]
-    public partial class AgentPriorityHistory
+    [Table("ProductCostHistory")]
+    public partial class ProductCostHistory
     {
         public int ID { get; set; }
 
-        public int AgentID { get; set; }
+        public int ProductID { get; set; }
 
         public DateTime ChangeDate { get; set; }
 
-        public int PriorityValue { get; set; }
+        public decimal CostValue { get; set; }
 
-        public virtual Agent Agent { get; set; }
+        public virtual ProductModel Product { get; set; }
     }
 }

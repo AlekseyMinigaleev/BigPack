@@ -17,6 +17,6 @@ namespace BigPack.Db
 
         public double CountValue { get; set; }
 
-        public virtual Material Material { get; set; }
+        public virtual MaterialModel Material { get; set; }
     }
 }

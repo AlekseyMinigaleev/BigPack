@@ -7,12 +7,12 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("Supplier")]
-    public partial class Supplier
+    public partial class SupplierModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Supplier()
+        public SupplierModel()
         {
-            Material = new HashSet<Material>();
+            Materials = new HashSet<MaterialModel>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -33,6 +33,6 @@ namespace BigPack.Db
         public string SupplierType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<MaterialModel> Materials { get; set; }
     }
 }
