@@ -12,9 +12,9 @@ namespace BigPack.Db
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductModel()
         {
-            ProductCostHistory = new HashSet<ProductCostHistory>();
-            ProductMaterial = new HashSet<ProductMaterial>();
-            ProductSale = new HashSet<ProductSale>();
+            ProductCostHistory = new HashSet<ProductCostHistoryModel>();
+            ProductMaterial = new HashSet<ProductMaterialModel>();
+            ProductSale = new HashSet<ProductSaleModel>();
         }
 
         public int ID { get; set; }
@@ -40,15 +40,15 @@ namespace BigPack.Db
 
         public decimal MinCostForAgent { get; set; }
 
-        public virtual ProductType ProductType { get; set; }
+        public virtual ProductTypeModel ProductType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductCostHistory> ProductCostHistory { get; set; }
+        public virtual ICollection<ProductCostHistoryModel> ProductCostHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
+        public virtual ICollection<ProductMaterialModel> ProductMaterial { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSale> ProductSale { get; set; }
+        public virtual ICollection<ProductSaleModel> ProductSale { get; set; }
     }
 }

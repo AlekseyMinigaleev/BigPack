@@ -50,8 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AgentModel.cs" />
+    <Compile Include="Models\AgentPriorityHistoryModel.cs" />
+    <Compile Include="Models\AgentTypeModel.cs" />
     <Compile Include="BigPackDbContext.cs" />
+    <Compile Include="Models\MaterialModel.cs" />
+    <Compile Include="Models\MaterialCountHistory.cs" />
+    <Compile Include="Models\MaterialTypeModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProductCostHistoryModel.cs" />
+    <Compile Include="Models\ProductMaterialModel.cs" />
+    <Compile Include="Models\ProductSaleModel.cs" />
+    <Compile Include="Models\ProductTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

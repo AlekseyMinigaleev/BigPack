@@ -7,7 +7,7 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("ProductCostHistory")]
-    public partial class ProductCostHistory
+    public partial class ProductCostHistoryModel
     {
         public int ID { get; set; }
 

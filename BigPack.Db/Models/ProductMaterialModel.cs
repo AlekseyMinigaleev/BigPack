@@ -7,7 +7,7 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("ProductMaterial")]
-    public partial class ProductMaterial
+    public partial class ProductMaterialModel
     {
         [Key]
         [Column(Order = 0)]
