@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BigPack.Presentation"
         mc:Ignorable="d"
-           Title="MainWindow" Height="450" Width="800" FontFamily="Verdana" Icon="Большая пачка.png">
+           Title="MainWindow" Height="450" Width="800" FontFamily="Verdana" >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="197*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Image Source="/Большая пачка.png" HorizontalAlignment="Left"/>
-        <TextBlock Text="Большая пачка" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--<Image Source="/Большая пачка.png" HorizontalAlignment="Left"/>-->
+        <TextBlock Text="Большая пачка" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="340,0,0,0"/>
 
-        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden">
+        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2">
 
         </Frame>
 
