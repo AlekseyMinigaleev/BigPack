@@ -14,7 +14,15 @@ namespace BigPack.Presentation.ViewModels
 
         public IEnumerable<string> SuppliersNamesArray { get; set; }
 
-        public string SuppliersNames => string.Join(", ", SuppliersNamesArray);
+        private string suppliersNames;
+
+        public string SuppliersNames
+        {
+            get => string.Join(", ", SuppliersNamesArray);  
+       
+            set =>this.SuppliersNames = value;
+        }
+        
 
         public int CountInStock { get; set; }
 
