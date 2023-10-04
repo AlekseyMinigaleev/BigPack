@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigPack.Db", "BigPack.Db\BigPack.Db.csproj", "{37DA19C6-DEAE-4F00-819F-A46B056E075E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigPack.Presentation", "BigPack.Presentation\BigPack.Presentation.csproj", "{EF9AD949-43E7-402B-BADA-4E3548B9CB26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{37DA19C6-DEAE-4F00-819F-A46B056E075E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37DA19C6-DEAE-4F00-819F-A46B056E075E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37DA19C6-DEAE-4F00-819F-A46B056E075E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9AD949-43E7-402B-BADA-4E3548B9CB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9AD949-43E7-402B-BADA-4E3548B9CB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9AD949-43E7-402B-BADA-4E3548B9CB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9AD949-43E7-402B-BADA-4E3548B9CB26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
