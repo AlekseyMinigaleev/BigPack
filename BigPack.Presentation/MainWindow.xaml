@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <!--<Image Source="/Большая пачка.png" HorizontalAlignment="Left"/>-->
+        <Image Source="/Большая пачка.png" HorizontalAlignment="Left"/>
         <TextBlock Text="Большая пачка" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="340,0,0,0"/>
 
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2">
