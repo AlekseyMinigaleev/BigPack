@@ -1,4 +1,7 @@
-﻿using BigPack.Db;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using BigPack.Db;
+using BigPack.Presentation.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +24,19 @@ namespace BigPack.Presentation
     /// </summary>
     public partial class MaterialsViewPage : Page
     {
+        private readonly BigPackDbContext _dbCOntext;
         public MaterialsViewPage()
         {
+            _dbCOntext = new BigPackDbContext();
             InitializeComponent();
-            var dbcontext = new BigPackDbContext();
-            var materials = dbcontext.Materials.ToList();
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            mc.AddProfile(new MaterialViewModelProfiler()));
+            var mapper = mapperConfig.CreateMapper();
+
+            var materials = _dbCOntext.Materials
+                .ProjectTo<MaterialViewModel>(mapper.ConfigurationProvider)
+                .ToList();
 
             MaterialsListView.ItemsSource = materials;
         }

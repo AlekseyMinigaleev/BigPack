@@ -25,6 +25,6 @@ namespace BigPack.Db
         public string Image { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgentModel> Agent { get; set; }
+        public virtual ISet<AgentModel> Agent { get; set; }
     }
 }

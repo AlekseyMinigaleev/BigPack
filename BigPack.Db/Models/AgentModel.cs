@@ -53,12 +53,12 @@ namespace BigPack.Db
         public virtual AgentTypeModel AgentType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgentPriorityHistoryModel> AgentPriorityHistory { get; set; }
+        public virtual ISet<AgentPriorityHistoryModel> AgentPriorityHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSaleModel> ProductSale { get; set; }
+        public virtual ISet<ProductSaleModel> ProductSale { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopModel> Shop { get; set; }
+        public virtual ISet<ShopModel> Shop { get; set; }
     }
 }

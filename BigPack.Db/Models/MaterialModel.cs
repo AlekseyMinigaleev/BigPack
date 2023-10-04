@@ -43,14 +43,14 @@ namespace BigPack.Db
         public int MaterialTypeID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialCountHistory> MaterialCountHistories { get; set; }
+        public virtual ISet<MaterialCountHistory> MaterialCountHistories { get; set; }
 
         public virtual MaterialTypeModel MaterialType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterialModel> ProductMaterials { get; set; }
+        public virtual ISet<ProductMaterialModel> ProductMaterials { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SupplierModel> Suppliers { get; set; }
+        public virtual ISet<SupplierModel> Suppliers { get; set; }
     }
 }
