@@ -43,12 +43,12 @@ namespace BigPack.Db
         public virtual ProductTypeModel ProductType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductCostHistoryModel> ProductCostHistory { get; set; }
+        public virtual ISet<ProductCostHistoryModel> ProductCostHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterialModel> ProductMaterial { get; set; }
+        public virtual ISet<ProductMaterialModel> ProductMaterial { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSaleModel> ProductSale { get; set; }
+        public virtual ISet<ProductSaleModel> ProductSale { get; set; }
     }
 }

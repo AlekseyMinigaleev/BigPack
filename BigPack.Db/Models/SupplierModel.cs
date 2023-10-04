@@ -33,6 +33,6 @@ namespace BigPack.Db
         public string SupplierType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialModel> Materials { get; set; }
+        public virtual ISet<MaterialModel> Materials { get; set; }
     }
 }

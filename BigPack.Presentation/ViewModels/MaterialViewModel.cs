@@ -1,24 +1,26 @@
 ﻿using AutoMapper;
 using BigPack.Db;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace BigPack.Presentation.ViewModels
 {
     internal class MaterialViewModel
     {
         public string MaterialName { get; set; }
-        
+
         public string MaterialTypeName { get; set; }
-        
-        public string SuppliersNames { get; set; }
-        
+
+        public IEnumerable<string> SuppliersNamesArray { get; set; }
+
+        public string SuppliersNames => string.Join(", ", SuppliersNamesArray);
+
         public int CountInStock { get; set; }
-        
+
         public int MinCount { get; set; }
+
+        public StickyNoteControl MyProperty { get; set; }
     }
 
     internal class MaterialViewModelProfiler : Profile
@@ -28,10 +30,10 @@ namespace BigPack.Presentation.ViewModels
             CreateMap<MaterialModel, MaterialViewModel>()
                 .ForMember(dest => dest.MaterialName, opt => opt.MapFrom(src => src.Title))
                 .ForMember(dest => dest.MaterialTypeName, opt => opt.MapFrom(src => src.MaterialType.Title))
-                //.ForMember(dest => dest.SuppliersNames, opt => opt.MapFrom(src => string.Concat(src.Suppliers.Select(x => x.Title))))
+                .ForMember(dest => dest.SuppliersNamesArray, opt => opt.MapFrom(src => src.Suppliers.Select(x => x.Title)))
                 .ForMember(dest => dest.CountInStock, opt => opt.MapFrom(src => src.CountInStock))
-                .ForMember(dest => dest.MinCount, opt => opt.MapFrom(src => src.MinCount))
-                .ForMember(dest => dest.SuppliersNames, opt => opt.Ignore());
+                .ForMember(dest => dest.SuppliersNames, opt => opt.Ignore())
+                .ForMember(dest => dest.MinCount, opt => opt.MapFrom(src => src.MinCount));
         }
     }
 }
