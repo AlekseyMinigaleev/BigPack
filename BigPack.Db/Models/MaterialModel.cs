@@ -30,9 +30,9 @@ namespace BigPack.Db
         [StringLength(50)]
         public string Unit { get; set; }
 
-        public int CountInStock { get; set; }
+        public double? CountInStock { get; set; }
 
-        public int MinCount { get; set; }
+        public double MinCount { get; set; }
 
         public string Description { get; set; }
 

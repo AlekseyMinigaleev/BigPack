@@ -16,6 +16,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
@@ -23,18 +24,21 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Width="70" Grid.Column="0" Stretch="UniformToFill" HorizontalAlignment="Center">
-                            <Image.Source>
-                                Resources\picture.png
-                            </Image.Source>
-                        </Image>
+                        <Image Width="70" Grid.Column="0" Stretch="UniformToFill" HorizontalAlignment="Center" Source="Resources\picture.png"/>
                         <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right"/>
                         <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" FontSize="16"/>
 
-                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Title, StringFormat='Тип материала | {0}'}"/>
-                        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Text="{Binding CountInStock}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} | {1}">
+                                    <Binding Path="MaterialType" />
+                                    <Binding Path="Title" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Text="{Binding CountInStock}"/>
                         <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding MinCount}"/>
                         <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding CountInPack}"/>
                     </Grid>
