@@ -7,14 +7,14 @@ namespace BigPack.Db
     using System.Data.Entity.Spatial;
 
     [Table("Agent")]
-    public partial class Agent
+    public partial class AgentModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Agent()
+        public AgentModel()
         {
-            AgentPriorityHistory = new HashSet<AgentPriorityHistory>();
-            ProductSale = new HashSet<ProductSale>();
-            Shop = new HashSet<Shop>();
+            AgentPriorityHistory = new HashSet<AgentPriorityHistoryModel>();
+            ProductSale = new HashSet<ProductSaleModel>();
+            Shop = new HashSet<ShopModel>();
         }
 
         public int ID { get; set; }
@@ -50,15 +50,15 @@ namespace BigPack.Db
 
         public int Priority { get; set; }
 
-        public virtual AgentType AgentType { get; set; }
+        public virtual AgentTypeModel AgentType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgentPriorityHistory> AgentPriorityHistory { get; set; }
+        public virtual ICollection<AgentPriorityHistoryModel> AgentPriorityHistory { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSale> ProductSale { get; set; }
+        public virtual ICollection<ProductSaleModel> ProductSale { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Shop> Shop { get; set; }
+        public virtual ICollection<ShopModel> Shop { get; set; }
     }
 }
