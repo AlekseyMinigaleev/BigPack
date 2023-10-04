@@ -40,5 +40,21 @@ namespace BigPack.Presentation
 
             MaterialsListView.ItemsSource = materials;
         }
+
+        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+
+        private void SortComboBoxType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FiltrComboBoxType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

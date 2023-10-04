@@ -9,7 +9,57 @@
         Title="MaterialsViewPage" FontFamily="Verdana">
 
     <Grid>
-        <ListView Name="MaterialsListView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBox Name="TextBoxSearch" Width="300" FontSize="15">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Resources>
+                                <VisualBrush x:Key="WatermarkBrush" AlignmentX="Left" AlignmentY="Center">
+                                    <VisualBrush.Visual>
+                                        <TextBlock Text="Введите для поиска" Foreground="Gray"/>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Style.Resources>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="">
+                                    <Setter Property="Background" Value="{StaticResource WatermarkBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="Background" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <ComboBox Name="SortComboBoxType" SelectionChanged="SortComboBoxType_SelectionChanged" FontSize="15" Width="200">
+                    <ComboBoxItem IsEnabled="False" IsSelected="True">Сортировка</ComboBoxItem>
+                    <TextBlock>Остаток убывание</TextBlock>
+                    <TextBlock>Остаток возрастание</TextBlock>
+                    <TextBlock>От А до Я</TextBlock>
+                    <TextBlock>От Я до А</TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <ComboBox Text="Фильтрация" Name="FiltrComboBoxType" SelectionChanged="FiltrComboBoxType_SelectionChanged" FontSize="15" Width="200">
+                    <ComboBoxItem IsEnabled="False" IsSelected="True">Фильтрация</ComboBoxItem>
+                    <TextBlock>Гранулы</TextBlock>
+                    <TextBlock>Краски</TextBlock>
+                    <TextBlock>Нитки</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+       
+        <ListView Name="MaterialsListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -43,8 +93,6 @@
                             <Button Name="EditButton" Content="Редактировать" Margin="5"/>
                             <Button Name="DeleteButton" Content="Удалить" Margin="5"/>
                         </StackPanel>
-
-
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
